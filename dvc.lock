@@ -15,3 +15,24 @@ stages:
       hash: md5
       md5: 062ff41161122e620af82b9530f4cd54
       size: 338743
+  feature_creation:
+    cmd: python -m src.features.feature_creation
+    deps:
+    - path: data/raw/data.csv
+      hash: md5
+      md5: 062ff41161122e620af82b9530f4cd54
+      size: 338743
+    - path: src/features/feature_creation.py
+      hash: md5
+      md5: 61e20f32ea29a696ace506f40a566df4
+      size: 4271
+    params:
+      params.yaml:
+        feature_creation.last_n_features: 20
+        feature_creation.train_size: 0.8
+    outs:
+    - path: data/interim
+      hash: md5
+      md5: 39413e327c297ed76809687062212b35.dir
+      size: 989275
+      nfiles: 2

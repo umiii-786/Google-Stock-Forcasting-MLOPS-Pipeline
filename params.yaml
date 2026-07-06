@@ -1,2 +1,7 @@
 data_ingestion:
     filename: 'GooG.csv'
+
+feature_creation:
+    train_size: 0.8
+    last_n_features: 20
+

@@ -1,9 +1,20 @@
 stages:
   data_ingestion:
-    cmd:  python -m src.data.data_ingestion
+    cmd: python -m src.data.data_ingestion
     deps:
     - src/data/data_ingestion.py
     params:
     - data_ingestion.filename
     outs:
     - data/raw/data.csv
+
+  feature_creation:
+    cmd: python -m src.features.feature_creation
+    deps:
+    - data/raw/data.csv
+    - src/features/feature_creation.py
+    params:
+    - feature_creation.train_size
+    - feature_creation.last_n_features
+    outs:
+    - data/interim

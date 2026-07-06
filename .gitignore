@@ -4,7 +4,7 @@ models
 myenv
 # Mac OS-specific storage files
 .DS_Store
-
+dvc-storage
 # vim
 *.swp
 *.swo
