@@ -18,3 +18,11 @@ stages:
     - feature_creation.last_n_features
     outs:
     - data/interim
+  feature_transformation:
+    cmd: python -m src.features.feature_transformation
+    deps:
+    - data/interim
+    - src/features/feature_transformation.py
+    outs:
+    - data/processed
+    - models/

@@ -36,3 +36,26 @@ stages:
       md5: 39413e327c297ed76809687062212b35.dir
       size: 989275
       nfiles: 2
+  feature_transformation:
+    cmd: python -m src.features.feature_transformation
+    deps:
+    - path: data/interim
+      hash: md5
+      md5: 39413e327c297ed76809687062212b35.dir
+      size: 989275
+      nfiles: 2
+    - path: src/features/feature_transformation.py
+      hash: md5
+      md5: 6cd231c9469654d9e44e8c1c75c7d386
+      size: 5239
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: b4bf0b9792bfe80808671dbd3dbdecb9.dir
+      size: 1970641
+      nfiles: 2
+    - path: models/
+      hash: md5
+      md5: fd5732372ab3feb09ea3f05ea7e857a4.dir
+      size: 1438
+      nfiles: 2
