@@ -1,0 +1,17 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python -m src.data.data_ingestion
+    deps:
+    - path: src/data/data_ingestion.py
+      hash: md5
+      md5: 26072a70c5e278f5e6fe1f1f45b1e33a
+      size: 1789
+    params:
+      params.yaml:
+        data_ingestion.filename: GooG.csv
+    outs:
+    - path: data/raw/data.csv
+      hash: md5
+      md5: 062ff41161122e620af82b9530f4cd54
+      size: 338743
