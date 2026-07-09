@@ -54,8 +54,28 @@ stages:
       md5: b4bf0b9792bfe80808671dbd3dbdecb9.dir
       size: 1970641
       nfiles: 2
-    - path: models/
+    - path: models/X_transformer.pkl
       hash: md5
-      md5: fd5732372ab3feb09ea3f05ea7e857a4.dir
-      size: 1438
+      md5: fd0bb556d7adb2e4855aa22bfba7af66
+      size: 719
+    - path: models/y_transformer.pkl
+      hash: md5
+      md5: 6c2a37ff73c44e09498528a77c0c5e91
+      size: 719
+  training_stage:
+    cmd: python -m src.model.train_model
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: b4bf0b9792bfe80808671dbd3dbdecb9.dir
+      size: 1970641
       nfiles: 2
+    - path: src/model/train_model.py
+      hash: md5
+      md5: 0865e056f6a49507fc2f37a2770f4bbe
+      size: 3901
+    outs:
+    - path: models/model.pth
+      hash: md5
+      md5: 557af0480632d64d80d55aebb448a5a8
+      size: 313317

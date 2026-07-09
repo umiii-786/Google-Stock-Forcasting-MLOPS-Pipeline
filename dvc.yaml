@@ -25,4 +25,12 @@ stages:
     - src/features/feature_transformation.py
     outs:
     - data/processed
-    - models/
+    - models/X_transformer.pkl
+    - models/y_transformer.pkl
+  training_stage:
+    cmd: python -m src.model.train_model
+    deps:
+    - data/processed
+    - src/model/train_model.py
+    outs:
+    - models/model.pth

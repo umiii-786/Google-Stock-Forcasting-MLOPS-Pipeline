@@ -21,3 +21,110 @@ Traceback (most recent call last):
   File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\pandas\core\indexes\base.py", line 3819, in get_loc
     raise KeyError(key) from err
 KeyError: 'close'
+2026-07-09 04:48:36,928 - root - ERROR - Model Training Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 145, in main
+    X_train,y_train=convert_into_tensor_and_reshape(X=X_train,y=y_train)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\model_define.py", line 49, in convert_into_tensor_and_reshape
+    X=torch.tensor(X,dtype=torch.float32)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not determine the shape of object type 'DataFrame'
+2026-07-09 04:49:16,364 - root - ERROR - Error occurred during model training.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 89, in train_model
+    y_pred = model(batch)
+             ^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\model_define.py", line 40, in forward
+    out, (h_n, _) = self.lstm1(features)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\rnn.py", line 1112, in forward
+    raise ValueError(
+ValueError: LSTM: Expected input to be 2D or 3D, got 4D instead
+2026-07-09 04:49:16,369 - root - ERROR - Model Training Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 150, in main
+    model = train_model(X_train, y_train)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 89, in train_model
+    y_pred = model(batch)
+             ^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\model_define.py", line 40, in forward
+    out, (h_n, _) = self.lstm1(features)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\rnn.py", line 1112, in forward
+    raise ValueError(
+ValueError: LSTM: Expected input to be 2D or 3D, got 4D instead
+2026-07-10 04:07:41,922 - root - ERROR - Error occurred during model training.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 90, in train_model
+    y_pred = model(batch)
+             ^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\model_define.py", line 40, in forward
+    out, (h_n, _) = self.lstm1(features)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\rnn.py", line 1112, in forward
+    raise ValueError(
+ValueError: LSTM: Expected input to be 2D or 3D, got 4D instead
+2026-07-10 04:07:41,926 - root - ERROR - Model Training Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 151, in main
+    model = train_model(X_train, y_train)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 90, in train_model
+    y_pred = model(batch)
+             ^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\model_define.py", line 40, in forward
+    out, (h_n, _) = self.lstm1(features)
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\rnn.py", line 1112, in forward
+    raise ValueError(
+ValueError: LSTM: Expected input to be 2D or 3D, got 4D instead
