@@ -1,0 +1,14 @@
+{
+    "input_size": 1,
+    "hidden_size": 128,
+    "lstm_layers": 1,
+    "dense_layers": 2,
+    "dense_units": [64,32],
+    "activation": "relu",
+    "dropout": 0.0,
+    "epochs": 20,
+    "batch_size": 32,
+    "lr": 0.001,
+    "last_n_time_step": 20,
+    "train_ratio": 0.8
+}

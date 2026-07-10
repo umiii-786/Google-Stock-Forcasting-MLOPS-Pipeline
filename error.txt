@@ -128,3 +128,61 @@ Traceback (most recent call last):
   File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\torch\nn\modules\rnn.py", line 1112, in forward
     raise ValueError(
 ValueError: LSTM: Expected input to be 2D or 3D, got 4D instead
+2026-07-10 16:47:12,859 - root - ERROR - Failed to log model to MLflow.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 156, in log_params_and_model
+    model_info = mlflow.pytorch.log_model(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 306, in log_model
+    return Model.log(
+           ^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\models\model.py", line 1218, in log
+    flavor.save_model(path=local_path, mlflow_model=mlflow_model, **kwargs)
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 518, in save_model
+    raise MlflowException(
+mlflow.exceptions.MlflowException: If `serialization_format` is set to 'pt2', then input_example is required. It must be a numpy array or torch tensor, or a tuple/list of numpy arrays or torch tensors. This is because 'pt2' is a traced-graph format: PyTorch traces the model graph by virtually executing model.forward with the provided example input.
+2026-07-10 16:47:12,866 - root - ERROR - Model Training Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 237, in main
+    model_id, run_id = log_params_and_model(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 156, in log_params_and_model
+    model_info = mlflow.pytorch.log_model(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 306, in log_model
+    return Model.log(
+           ^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\models\model.py", line 1218, in log
+    flavor.save_model(path=local_path, mlflow_model=mlflow_model, **kwargs)
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 518, in save_model
+    raise MlflowException(
+mlflow.exceptions.MlflowException: If `serialization_format` is set to 'pt2', then input_example is required. It must be a numpy array or torch tensor, or a tuple/list of numpy arrays or torch tensors. This is because 'pt2' is a traced-graph format: PyTorch traces the model graph by virtually executing model.forward with the provided example input.
+2026-07-10 16:51:49,041 - root - ERROR - Failed to log model to MLflow.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 157, in log_params_and_model
+    model_info = mlflow.pytorch.log_model(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 306, in log_model
+    return Model.log(
+           ^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\models\model.py", line 1218, in log
+    flavor.save_model(path=local_path, mlflow_model=mlflow_model, **kwargs)
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 532, in save_model
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Unsupported signature type for the selected serialization format. If the `serialization_format` argument is set to 'pt2', the input signature must be specified using `TensorSpec`. Please update the model signature or set `serialization_format` to 'pickle'.
+2026-07-10 16:51:49,046 - root - ERROR - Model Training Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 239, in main
+    model_id, run_id = log_params_and_model(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\train_model.py", line 157, in log_params_and_model
+    model_info = mlflow.pytorch.log_model(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 306, in log_model
+    return Model.log(
+           ^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\models\model.py", line 1218, in log
+    flavor.save_model(path=local_path, mlflow_model=mlflow_model, **kwargs)
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 532, in save_model
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Unsupported signature type for the selected serialization format. If the `serialization_format` argument is set to 'pt2', the input signature must be specified using `TensorSpec`. Please update the model signature or set `serialization_format` to 'pickle'.

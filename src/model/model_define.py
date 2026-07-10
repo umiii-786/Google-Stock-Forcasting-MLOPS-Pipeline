@@ -15,34 +15,82 @@ class MyDataset(Dataset):
     def __getitem__(self, index):
         return self.features[index], self.target[index]
         
+class LSTM_Model(nn.Module):
 
-class MYLSTM(nn.Module):
-    def __init__(self):
+    def __init__(
+        self,
+        input_size,
+        hidden_size,
+        lstm_layers,
+        dense_layers,
+        dense_units,
+        activation,
+        dropout
+    ):
         super().__init__()
 
-        # First LSTM layer
-        self.lstm1 = nn.LSTM(
-            input_size=1,
-            hidden_size=128,
-            batch_first=True,
+        self.lstm = nn.LSTM(
+            input_size=input_size,
+            hidden_size=hidden_size,
+            num_layers=lstm_layers,
+            batch_first=True
         )
 
-        self.fdPart = nn.Sequential(
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, 32),
-            nn.ReLU(),
+        layers = []
+        in_features = hidden_size
 
-            nn.Linear(32, 1)
-        )
+        activations = {
+            "relu": nn.ReLU(),
+            "tanh": nn.Tanh(),
+            "leakyrelu": nn.LeakyReLU()
+        }
 
-    def forward(self, features):
-        out, (h_n, _) = self.lstm1(features)
+        for i in range(dense_layers):
 
-        out = h_n[-1]          # Last hidden state of last LSTM
-        out = self.fdPart(out)
+            layers.append(nn.Linear(in_features, dense_units[i]))
+            layers.append(activations[activation])
+            layers.append(nn.Dropout(dropout))
 
-        return out
+            in_features = dense_units[i]
+
+        layers.append(nn.Linear(in_features, 1))
+        self.fc = nn.Sequential(*layers)
+
+    def forward(self, x):
+
+        x, _ = self.lstm(x)
+        x = x[:, -1, :]
+        x = self.fc(x)
+        return x
+
+
+# class MYLSTM(nn.Module):
+#     def __init__(self):
+#         super().__init__()
+
+#         # First LSTM layer
+#         self.lstm1 = nn.LSTM(
+#             input_size=1,
+#             hidden_size=128,
+#             batch_first=True,
+#         )
+
+#         self.fdPart = nn.Sequential(
+#             nn.Linear(128, 64),
+#             nn.ReLU(),
+#             nn.Linear(64, 32),
+#             nn.ReLU(),
+
+#             nn.Linear(32, 1)
+#         )
+
+#     def forward(self, features):
+#         out, (h_n, _) = self.lstm1(features)
+
+#         out = h_n[-1]          # Last hidden state of last LSTM
+#         out = self.fdPart(out)
+
+#         return out
     
 
 def convert_into_tensor_and_reshape(X,y):
