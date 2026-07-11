@@ -34,3 +34,13 @@ stages:
     - src/model/train_model.py
     outs:
     - models/model.pth
+  testing_stage:
+    cmd: python -m src.model.test_model
+    deps:
+    - data/processed
+    - models/
+    - reports/data.json
+    - src/model/test_model.py
+
+    outs:
+    -  reports/metrics_report.json 

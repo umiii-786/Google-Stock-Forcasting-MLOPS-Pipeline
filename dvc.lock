@@ -79,3 +79,29 @@ stages:
       hash: md5
       md5: a2b9c665023c2387eb8798a83d172573
       size: 313317
+  testing_stage:
+    cmd: python -m src.model.test_model
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: b4bf0b9792bfe80808671dbd3dbdecb9.dir
+      size: 1970641
+      nfiles: 2
+    - path: models/
+      hash: md5
+      md5: e4bf3838db59033ff19b25e004bad63f.dir
+      size: 314755
+      nfiles: 3
+    - path: reports/data.json
+      hash: md5
+      md5: d798dfe538cb445050ac7734d694aa3a
+      size: 137
+    - path: src/model/test_model.py
+      hash: md5
+      md5: 9e67f44de3b0c5e3fd0c3ccfdb8ed880
+      size: 10175
+    outs:
+    - path: reports/metrics_report.json
+      hash: md5
+      md5: d88a96568b726e2e26a092f03a6a2f62
+      size: 336

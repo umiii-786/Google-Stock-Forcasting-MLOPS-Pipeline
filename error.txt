@@ -186,3 +186,78 @@ Traceback (most recent call last):
   File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\mlflow\pytorch\__init__.py", line 532, in save_model
     raise MlflowException(
 mlflow.exceptions.MlflowException: Unsupported signature type for the selected serialization format. If the `serialization_format` argument is set to 'pt2', the input signature must be specified using `TensorSpec`. Please update the model signature or set `serialization_format` to 'pickle'.
+2026-07-11 16:21:11,207 - root - ERROR - Failed to load model.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 63, in load_model
+    model = LSTM_Model()
+            ^^^^^^^^^^^^
+TypeError: LSTM_Model.__init__() missing 7 required positional arguments: 'input_size', 'hidden_size', 'lstm_layers', 'dense_layers', 'dense_units', 'activation', and 'dropout'
+2026-07-11 16:21:11,208 - root - ERROR - Model Evaluation Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 259, in main
+    model = load_model(model_path)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 63, in load_model
+    model = LSTM_Model()
+            ^^^^^^^^^^^^
+TypeError: LSTM_Model.__init__() missing 7 required positional arguments: 'input_size', 'hidden_size', 'lstm_layers', 'dense_layers', 'dense_units', 'activation', and 'dropout'
+2026-07-11 16:28:37,622 - root - ERROR - Failed to load y transformer.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 118, in load_y_transformer
+    y_transformer = pickle.load(f)
+                    ^^^^^^^^^^^^^^
+_pickle.UnpicklingError: invalid load key, '\x07'.
+2026-07-11 16:28:37,622 - root - ERROR - Model Evaluation Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 291, in main
+    y_transformer = load_y_transformer(model_path)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 118, in load_y_transformer
+    y_transformer = pickle.load(f)
+                    ^^^^^^^^^^^^^^
+_pickle.UnpicklingError: invalid load key, '\x07'.
+2026-07-11 16:38:08,285 - root - ERROR - Model evaluation failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 179, in test_model
+    real_y_train = y_transformer.inverse_transform(y_train_np)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\sklearn\preprocessing\_data.py", line 605, in inverse_transform
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\sklearn\utils\validation.py", line 1073, in check_array
+    raise ValueError(msg)
+ValueError: Expected 2D array, got 1D array instead:
+array=[0.0000000e+00 6.5225415e-04 1.2207621e-04 ... 9.7612953e-01 9.8037994e-01
+ 9.7842628e-01].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2026-07-11 16:38:08,304 - root - ERROR - Model Evaluation Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 320, in main
+    metrics=test_model(
+            ^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 179, in test_model
+    real_y_train = y_transformer.inverse_transform(y_train_np)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\sklearn\preprocessing\_data.py", line 605, in inverse_transform
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\myenv\Lib\site-packages\sklearn\utils\validation.py", line 1073, in check_array
+    raise ValueError(msg)
+ValueError: Expected 2D array, got 1D array instead:
+array=[0.0000000e+00 6.5225415e-04 1.2207621e-04 ... 9.7612953e-01 9.8037994e-01
+ 9.7842628e-01].
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2026-07-11 17:14:41,624 - root - ERROR - Failed to save metrics report: module 'datetime' has no attribute 'now'
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 267, in save_metrics_report
+    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                 ^^^^^^^^^^^^
+AttributeError: module 'datetime' has no attribute 'now'
+2026-07-11 17:14:41,626 - root - ERROR - Model Evaluation Pipeline Failed.
+Traceback (most recent call last):
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 334, in main
+    save_metrics_report(metrics=metrics)
+  File "C:\Users\M.UMAIR\Desktop\mlops\Google_Stock_Price_Forcasting\src\model\test_model.py", line 267, in save_metrics_report
+    "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                 ^^^^^^^^^^^^
+AttributeError: module 'datetime' has no attribute 'now'
