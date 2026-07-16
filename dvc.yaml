@@ -41,6 +41,6 @@ stages:
     - models/
     - reports/data.json
     - src/model/test_model.py
-
     outs:
-    -  reports/metrics_report.json 
+    - reports/metrics_report.json
+
