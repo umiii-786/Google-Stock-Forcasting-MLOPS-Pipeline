@@ -13,7 +13,7 @@ from src.model.model_define import ( LSTM_Model, MyDataset, convert_into_tensor_
 load_dotenv()
 dagshub_pat=os.getenv("DAGSHUB_TOKEN")
 if not dagshub_pat:
-    raise EnvironmentError('DAGSHUB_PAT environment variable is not setted ') 
+    raise EnvironmentError('DAGSHUB_Token environment variable is not setted ') 
 os.environ['MLFLOW_TRACKING_USERNAME']=dagshub_pat 
 os.environ['MLFLOW_TRACKING_PASSWORD']=dagshub_pat 
 
